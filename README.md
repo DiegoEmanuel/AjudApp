@@ -9,7 +9,7 @@
 
 ## About Laravel
 
-## Marcação onde eu parei https://www.youtube.com/watch?v=Bn1nrr7HPkc
+##### only for fas https://www.youtube.com/watch?v=Bn1nrr7HPkc
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
