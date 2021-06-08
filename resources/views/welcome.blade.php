@@ -2,8 +2,8 @@
 @section('title', 'AJUDAI')
 @section('content')
 
-    <h1> Alguma coisa </h1>
-    <img src="/images/logoajudai.png" alt="banner" />
+    <h1> Seja bem vindo </h1>
+    <img src="/images/banner.png" alt="banner"  class="banner" width="1500"/>
     @if (10 > 9)
         <p>A condição é true</p>
 

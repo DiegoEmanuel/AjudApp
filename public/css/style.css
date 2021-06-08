@@ -1,5 +1,9 @@
 h1{
-    color: red;
+    color: blue;
     font-family: Roboto;
 
+}
+
+#navbar img{
+    width: 250px;
 }
