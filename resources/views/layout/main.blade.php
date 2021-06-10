@@ -29,7 +29,7 @@
                         <li class="nav-item"></li>
                         <a href="/" class="nav-link">Eventos</a>
                         <li class="nav-item"></li>
-                        <a href="/" class="nav-link">Doar</a>
+                        <a href="/events/create" class="nav-link">Doar</a>
                         <li class="nav-item"></li>
                         <a href="/" class="nav-link">Entrar</a>
                         <li class="nav-item"></li>
@@ -41,7 +41,7 @@
     @yield('content')
 
     <footer>
-        <p>HDC Events &copy; 2021</p>
+        <p>HDC Eventss &copy; 2021</p>
     </footer>
 </body>
 
