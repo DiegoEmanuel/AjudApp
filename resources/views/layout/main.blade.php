@@ -29,7 +29,7 @@
                         <li class="nav-item"></li>
                         <a href="/" class="nav-link">Eventos</a>
                         <li class="nav-item"></li>
-                        <a href="/events/create" class="nav-link">Doar</a>
+                        <a href="/events/create" class="nav-link">Criar doação</a>
                         <li class="nav-item"></li>
                         <a href="/" class="nav-link">Entrar</a>
                         <li class="nav-item"></li>
@@ -43,6 +43,8 @@
     <footer>
         <p>HDC Eventss &copy; 2021</p>
     </footer>
+    <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
+
 </body>
 
 </html>
