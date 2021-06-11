@@ -1,9 +1,38 @@
+/*General */
 h1{
     color: blue;
     font-family: Roboto;
 
 }
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+header{
+    background-color: azure;
+    border-bottom: 1px;
+}
+row{
+    margin:0;
+}
+.container-fluid{
+    padding: 0;
+}
+.btn-primary{
+    background-color: #f2a340;
+    border: 2px solid #C28008;
+}
+.btn-primary:hover{
+    background-color: #C28008;
+    border-color: #C28008;
+}
 
 #navbar img{
-    width: 250px;
+    width: 40px;
+}
+#navbar{
+    justify-content: space-between;
+    background-color: #FFF;
+    padding: 0px;
 }
