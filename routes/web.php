@@ -19,6 +19,8 @@ Route::get('/events/create', [EventController::class, 'create']  );
 Route::get('contact', function () {
     return view('contact');
 });
+## Rotas condicionais -- Estudo
+/*
 Route::get('/products', function () {
 
     $busca=request('search');
@@ -29,3 +31,6 @@ Route::get('/products', function () {
 Route::get('/products/{id?}', function ($id) {
     return view('produto',['id' =>$id]);
 });
+*/
+
+
