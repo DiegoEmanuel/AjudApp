@@ -8,11 +8,11 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
-    {
-        $events =Event::all();
+        public function index()
+        {
+            $events =Event::all();
 
-        return view('welcome',['events=>$events']);
+        return view('welcome',['events'=>$events]);
     }
     public function create(){
         return view('events.create');
