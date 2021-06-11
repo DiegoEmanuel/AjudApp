@@ -34,5 +34,80 @@ row{
 #navbar{
     justify-content: space-between;
     background-color: #FFF;
-    padding: 0px;
+    padding: 5px 0;
+}
+#navbar a{
+    font-size: 14px;
+    color:#757575
+}
+#navbar a:hover{
+    color:#f2a340;
+}
+
+/*seach container*/
+#search-container{
+    background-image: url("../images/banner.png");
+    background-size:cover ;
+    background-position: center;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+}
+#search-container h1{
+    color: #f2a340;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+#search-container form{
+    width: 50%;
+    margin: auto;
+}
+
+/*Events list*/
+#events-container h2{
+    margin-bottom: 10px;
+}
+#events-container .subtitle{
+    color:#f2a340;
+    margin-bottom:30px;
+
+}
+#cards-container{
+    display: flex;
+}
+#events-container card{
+    flex: 1 1 0;
+    max-width:25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 5px;
+}
+#events-container img{
+    max-height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card .card-date{
+    font-size: 12px;
+    color: #CCC;
+}
+.card .card-title{
+    color:#212121;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.card-participants{
+    font: size 14px;
+    color:#353e48;
+    }
+/*footer*/
+footer{
+    text-align: center;
+    background-color: #353e48;
+    color: #FFF;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
