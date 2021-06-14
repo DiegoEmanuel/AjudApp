@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-                    <img src="/images/logoajudai.png" alt="Ajudai Tamo Junto"> </a>
+                    <img src="/images/logoajudai.png" class="logo" alt="Ajudai Tamo Junto"> </a>
                     <ul class="navbar-nav">
                         <li class="nav-item"></li>
                         <a href="/" class="nav-link">Eventos</a>
@@ -38,8 +38,17 @@
             </div>
         </nav>
     </header>
-    @yield('content')
+    <main>
+        <div class="fluid">
+            <div class="row">
+                @if(session('msg'))
+                    <p class="msg">{{ session('msg') }}</p>
 
+                @endif
+                @yield('content')
+            </div>
+        </div>
+    </main>
     <footer>
         <p>HDC Eventss &copy; 2021</p>
     </footer>

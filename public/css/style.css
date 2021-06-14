@@ -2,13 +2,23 @@
 * {
     font-family: 'Roboto';
   }
-
+  .logo {
+      margin-left: 200px ;
+  }
   body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
   }
-
+  .msg{
+      background-color: #d4eddd;
+      color: #155724;
+      border: 1px solid #c3c3c3;
+      width: 100%;
+      margin-bottom: 0;
+      text-align: center;
+      padding:10px;
+  }
   header {
     background-color: #FFF;
     border-bottom: 1px solid #CCC;
