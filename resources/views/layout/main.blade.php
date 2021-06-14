@@ -24,10 +24,10 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-                    <img src="/images/logoajudai.png" class="logo" alt="Ajudai Tamo Junto"> </a>
+                    <img src="/image/logoajudai.png" class="logo" alt="Ajudai Tamo Junto"> </a>
                     <ul class="navbar-nav">
                         <li class="nav-item"></li>
-                        <a href="/" class="nav-link">Eventos</a>
+                        <a href="/" class="nav-link">Doaçoes</a>
                         <li class="nav-item"></li>
                         <a href="/events/create" class="nav-link">Criar doação</a>
                         <li class="nav-item"></li>
