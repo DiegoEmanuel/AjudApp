@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']  );
-Route::get('/events/create', [EventController::class, 'create']  );
-Route::get('/events/$id', [EventController::class, 'show']  ); #show - ver um dados especifico
+Route::get('/events/create', [EventController::class, 'create']  ); #criar dado do banco
+Route::get('/events/{id}', [EventController::class, 'show']); #show - ver um dado do banco
 
 Route::post('/events',[EventController::class,'store']);
 
