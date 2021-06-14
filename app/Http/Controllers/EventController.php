@@ -42,4 +42,11 @@ class EventController extends Controller
 
         return redirect('/')->with('msg','Pedido de doação criado com sucesso !');
        }
+
+    public function show($id){
+        $event = Event::findOrfail($id);
+        return view('events.show',['event'=>$event]);
+    }
+
+
 }
