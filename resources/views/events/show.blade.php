@@ -29,6 +29,7 @@
                         </li>
                     @endforeach
                 </ul>
+
             </div>
             <div class="col-md-12" id="description-container">
                 <h3>Sobre o e evento</h3>
