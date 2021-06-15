@@ -33,6 +33,19 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Fazer doação">
   </form>
+  <label for="title">Descrição:</label>
+  <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?"></textarea>
+</div>
+    <label for="title">Descrição:</label>
+        <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?"></textarea>
+    </div>
+        <input type="submit" class="btn btn-primary" value="Fazer doação">
+        </form>
+        <label for="title">Descrição:</label>
+        <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Fazer doação">
+        </form>
 </div>
 
 @endsection
