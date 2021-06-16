@@ -1,6 +1,7 @@
 @extends('layout.main')
 
-@section('title', '$event->title')
+
+@section('title', $event->title)
 
 @section('content')
 

@@ -8,23 +8,40 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
-    {
-        $events = Event::all();
 
-        return view('welcome', ['events' => $events]);
+    public function index() {
+
+        $search = request('search');
+
+        if($search) {
+
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+
+        } else {
+            $events = Event::all();
+        }
+
+        return view('welcome',['events' => $events, 'search' => $search]);
+
     }
-    public function create()
-    {
+
+    public function create() {
         return view('events.create');
     }
+
     public function store(Request $request)
     {
         $event = new Event;
         $event->title = $request->title;
+        $event->date = $request->date;
         $event->city = $request->city;
         $event->private = $request->private;
         $event->description = $request->description;
+        $event->itens = $request->itens;
+
+
         // image upload
         if ($request->hasfile('image') && $request->file('image')->isValid()){ //Se a requisição tiver arquivo de imagem e se for válida
 
