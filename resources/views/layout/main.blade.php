@@ -26,23 +26,23 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
                     <img src="/image/logoajudai.png" class="logo" alt="Ajudai Tamo Junto"> </a>
-                    <ul class="navbar-nav">
-                        <li class="nav-item"></li>
-                        <a href="/" class="nav-link">Doaçoes</a>
-                        <li class="nav-item"></li>
-                        <a href="/events/create" class="nav-link">Criar doação</a>
-                        <li class="nav-item"></li>
-                        <a href="/" class="nav-link">Entrar</a>
-                        <li class="nav-item"></li>
-                        <a href="/" class="nav-link">Cadastrar</a>
-                    </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    <a href="/" class="nav-link">Doaçoes</a>
+                    <li class="nav-item"></li>
+                    <a href="/events/create" class="nav-link">Criar doação</a>
+                    <li class="nav-item"></li>
+                    <a href="/" class="nav-link">Entrar</a>
+                    <li class="nav-item"></li>
+                    <a href="/" class="nav-link">Cadastrar</a>
+                </ul>
             </div>
         </nav>
     </header>
     <main>
         <div class="fluid">
             <div class="row">
-                @if(session('msg'))
+                @if (session('msg'))
                     <p class="msg">{{ session('msg') }}</p>
 
                 @endif
