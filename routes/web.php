@@ -12,32 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use App\Http\Controllers\EventController;
-Route::get('/', [EventController::class, 'index']  );
-Route::get('/events/create', [EventController::class, 'create']  ); #criar dado do banco
-Route::get('/events/{id}', [EventController::class, 'show']); #show - ver um dado do banco
 
-Route::post('/events',[EventController::class,'store']);
+Route::get('/', [EventController::class, 'index']);
+Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/{id}', [EventController::class, 'show']);
+Route::post('/events', [EventController::class, 'store']);
 
-Route::get('contact', function () {
+Route::get('/contact', function () {
     return view('contact');
 });
 
-
-
-
-## Rotas condicionais -- Estudo
-/*
-Route::get('/products', function () {
-
-    $busca=request('search');
-
-
-    return view('products',['busca' => $busca]);
-});
-Route::get('/products/{id?}', function ($id) {
-    return view('produto',['id' =>$id]);
-});
-*/
-
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

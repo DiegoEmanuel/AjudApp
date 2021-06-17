@@ -27,14 +27,32 @@
                 <a href="/" class="navbar-brand">
                     <img src="/image/logoajudai.png" class="logo" alt="Ajudai Tamo Junto"> </a>
                 <ul class="navbar-nav">
-                    <li class="nav-item"></li>
-                    <a href="/" class="nav-link">Doaçoes</a>
-                    <li class="nav-item"></li>
-                    <a href="/events/create" class="nav-link">Criar doação</a>
-                    <li class="nav-item"></li>
-                    <a href="/" class="nav-link">Entrar</a>
-                    <li class="nav-item"></li>
-                    <a href="/" class="nav-link">Cadastrar</a>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Doaçoes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/create" class="nav-link">Criar doação</a>
+                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">Minhas doações</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <a href="/logout" class="nav-link" onclick="event.preventDefault();
+                                            this.closest('form').submit();"> Sair</a>
+                            </form>
+                        </li>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" class="nav-link">Cadastrar</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </nav>
