@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\EventController;
-
+//rotas para serem acessadas
 Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/{id}', [EventController::class, 'show']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth'); // middleware = só vai conseguir acessar o ('auth qnd estiver logado')
+Route::get('/events/{id}', [EventController::class, 'show']); ##mostrar com base no id
 Route::post('/events', [EventController::class, 'store']);
 
 Route::get('/contact', function () {
