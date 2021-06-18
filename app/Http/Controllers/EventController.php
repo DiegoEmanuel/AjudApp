@@ -5,29 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\User;
 
 class EventController extends Controller
 {
 
-    public function index() {
+    public function index()
+    {
 
         $search = request('search');
 
-        if($search) {
+        if ($search) {
 
             $events = Event::where([
-                ['title', 'like', '%'.$search.'%']
+                ['title', 'like', '%' . $search . '%']
             ])->get();
-
         } else {
             $events = Event::all();
         }
 
-        return view('welcome',['events' => $events, 'search' => $search]);
-
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('events.create');
     }
 
@@ -43,31 +44,36 @@ class EventController extends Controller
 
 
         // image upload
-        if ($request->hasfile('image') && $request->file('image')->isValid()){ //Se a requisição tiver arquivo de imagem e se for válida
+        if ($request->hasfile('image') && $request->file('image')->isValid()) { //Se a requisição tiver arquivo de imagem e se for válida
 
             $RequestImage = $request->image; #salvando a request->image em $RequestImage
 
             $extension =  $RequestImage->extension(); // salvando a extensão da imagem na variavel $extension
 
-            $imageName=md5($RequestImage->getClientOriginalName().strtotime("Now").".".$extension); // nome do path no banco
+            $imageName = md5($RequestImage->getClientOriginalName() . strtotime("Now") . "." . $extension); // nome do path no banco
 
-            $RequestImage->move(public_path('/image/events'),$imageName);
+            $RequestImage->move(public_path('/image/events'), $imageName);
 
             $event->image = $imageName;
         }
-        $user =auth()->user();
+        $user = auth()->user();
         $event->user_id = $user->id;
 
         $event->save();
 
-        return redirect('/')->with('msg','Pedido de doação criado com sucesso !');
-       }
-
-    public function show($id){
-        $event = Event::findOrfail($id);
-        return view('events.show',['event'=>$event]);
+        return redirect('/')->with('msg', 'Pedido de doação criado com sucesso !');
     }
 
+    public function show($id)
+    {
+        $event = Event::findOrfail($id);
 
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
+
+
+        return view('events.show', ['event' => $event]);
+    }
 }
 ##teste

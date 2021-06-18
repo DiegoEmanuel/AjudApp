@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 
 @section('title', $event->title)
@@ -19,7 +19,7 @@
                     <ion-icon name="people-outline"></ion-icon> X participants
                 </p>
                 <p class="event-owner">
-                    <ion-icon name="star-outline"></ion-icon> Dono do Evento
+                    <ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name']}}
                 </p>
                 <a href="#" class="btn btn-primary" id="event-submit">Confirmar doação</a>
                 <h3> A doação conta com </h3>

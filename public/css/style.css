@@ -171,6 +171,10 @@ header {
 #description-container h3 {
   font-size: 20px;
   font-weight: bold;
+
+}
+#description-container{
+    margin-top: 30px;
 }
 
 #info-container ion-icon {
