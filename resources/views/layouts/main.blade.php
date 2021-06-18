@@ -75,21 +75,3 @@
 </body>
 
 </html>
-## fiz muita coisa
-## no dia de hoje
-##mereco verdim
-## apenas mais 3
-@#$@#$@#$!$#!
-## fiz muita coisa
-## no dia de hoje
-##mereco verdim
-## apenas mais 3
-@#$@#$@#$!$#!## fiz muita coisa
-## no dia de hoje
-##mereco verdim
-## apenas mais 3
-@#$@#$@#$!$#!## fiz muita coisa
-## no dia de hoje
-##mereco verdim
-## apenas mais 3
-@#$@#$@#$!$#!

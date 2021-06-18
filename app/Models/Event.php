@@ -13,4 +13,8 @@ class Event extends Model
         'itens' => 'array'
     ];
     protected $dates = ['date'];
+
+    public function user(){
+        return $this->belongsTo('App\models\User');
+    }
 }
