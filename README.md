@@ -2,4 +2,8 @@
 <h1>A app for peaples conect to charity associations</h1>
     [ - ] Front-end
     [ - ] back-end
+    
+    Alinhado a esquerda | Centralizado | Alinhado a direita
+:--------- | :------: | -------:
+Valor | Valor | Valor
 <center> # AjudApp </center>
