@@ -220,6 +220,14 @@ footer {
     width: 100px;
     margin-top: 20px;
   }
+#info-container .alredy-joined-msg{
+    margin: 15px 0;
+    color:#FFF;
+    background-color: #5b693a;
+    border:1px solid #C3E6CB;
+    padding: 10px;
+    width: 250px;
+}
 footer p {
   margin-bottom: 0;
 }
