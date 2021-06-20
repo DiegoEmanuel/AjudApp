@@ -10,18 +10,18 @@
             @csrf
             <div class="form-group">
                 <label for="image">Suba sua imagem :</label>
-                <input type="file" class="form-control-file" id="image" name="image">
+                <input type="file" class="form-control-file" id="image" name="image" required>
             </div>
             <div class="form-group">
                 <label for="title">Evento:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento">
             </div>
             <div class="form-group">
-                <label for="date">Data do evento</label>
-                <input type="date" class="form-control" id="date" name="date">
+                <label for="date">Data do evento</label >
+                <input type="date" class="form-control" id="date" name="date"required>
             <div class="form-group">
                 <label for="title">Cidade:</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Local do evento">
+                <input type="text" class="form-control" id="city" required name="city" placeholder="Local do evento">
             </div>
             <div class="form-group">
                 <label for="title">O evento é privado?</label>
@@ -31,9 +31,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="title">Descrição:</label>
+                <label for="title">Descrição:</label >
                 <textarea name="description" id="description" class="form-control"
-                    placeholder="O que vai acontecer no evento?"></textarea>
+                    placeholder="O que vai acontecer no evento?" required></textarea>
             </div>
             <div class="form-group">
                 <label for="title">Adicione itens de infraestrutura:</label>

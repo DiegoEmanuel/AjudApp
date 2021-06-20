@@ -69,7 +69,7 @@
         </div>
     </main>
     <footer>
-        <p>HDC Eventss &copy; 2021</p>
+        <p>Ajudai Donates &copy; 2021</p>
     </footer>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>

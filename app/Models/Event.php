@@ -10,7 +10,7 @@ class Event extends Model
     use HasFactory;
 
     protected $casts = [
-        'items' => 'array'
+        'itens' => 'array'
     ];
 
     protected $dates = ['date'];
