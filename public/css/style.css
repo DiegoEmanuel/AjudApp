@@ -206,7 +206,14 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
+/* Darshboard*/
+.dashboard-title-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.dashboard-events-container form{
+    display: inline-block;
+}
 footer p {
   margin-bottom: 0;
 }

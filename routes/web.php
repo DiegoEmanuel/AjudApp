@@ -19,7 +19,8 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create'])->middleware('auth'); // middleware = só vai conseguir acessar o ('auth qnd estiver logado')
 Route::get('/events/{id}', [EventController::class, 'show']); ##mostrar com base no id
 Route::post('/events', [EventController::class, 'store']);
-
+Route::delete('/events/{id}',[EventController::class, 'destroy'])->middleware('auth');
+Route::get('/events/edit/{id}',[EventController::class,'edit'])->middleware('auth');
 Route::get('/contact', function () {
     return view('contact');
 });
