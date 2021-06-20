@@ -214,6 +214,12 @@ footer {
 .dashboard-events-container form{
     display: inline-block;
 }
+/* Edit page */
+
+.img-preview {
+    width: 100px;
+    margin-top: 20px;
+  }
 footer p {
   margin-bottom: 0;
 }

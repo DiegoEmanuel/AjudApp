@@ -34,8 +34,22 @@
             </div>
             <div class="col-md-12" id="description-container">
                 <h3>Sobre o e evento</h3>
-                <p class="eventdescription">{{ $event->description }}</p>
+                <p class="eventdescription">{{ $event->description }}
+                </p>
+                <p>
+                    @auth
+                    <td>
+                        <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                        <form action="/events/{{$event->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+                    </td>
+                    @endauth
+                </p>
+
             </div>
+
         </div>
     </div>
 @endsection

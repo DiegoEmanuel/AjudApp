@@ -13,7 +13,7 @@ class Event extends Model
         'itens' => 'array'
     ];
     protected $dates = ['date'];
-
+    protected $guarded=[];
     public function user(){
         return $this->belongsTo('App\models\User');
     }
