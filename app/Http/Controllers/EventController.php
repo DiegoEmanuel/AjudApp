@@ -3,114 +3,141 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//ver o que isso faz direito
+
 use App\Models\Event;
 use App\Models\User;
 
 class EventController extends Controller
 {
 
-    public function index()
-    {
+    public function index() {
 
         $search = request('search');
 
-        if ($search) {
+        if($search) {
 
             $events = Event::where([
-                ['title', 'like', '%' . $search . '%']
+                ['title', 'like', '%'.$search.'%']
             ])->get();
+
         } else {
             $events = Event::all();
         }
 
-        return view('welcome', ['events' => $events, 'search' => $search]);
+        return view('welcome',['events' => $events, 'search' => $search]);
+
     }
-    //função para criar um novo evento passando imagem, titulo,data,privacidade,descrição,itens
-    public function create()
-    {
+
+    public function create() {
         return view('events.create');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
         $event = new Event;
+
         $event->title = $request->title;
         $event->date = $request->date;
         $event->city = $request->city;
         $event->private = $request->private;
         $event->description = $request->description;
-        $event->itens = $request->itens;
+        $event->items = $request->items;
 
+        // Image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
 
-        // image upload
-        if ($request->hasfile('image') && $request->file('image')->isValid()) { //Se a requisição tiver arquivo de imagem e se for válida
+            $requestImage = $request->image;
 
-            $RequestImage = $request->image; #salvando a request->image em $RequestImage
+            $extension = $requestImage->extension();
 
-            $extension =  $RequestImage->extension(); // salvando a extensão da imagem na variavel $extension
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
-            $imageName = md5($RequestImage->getClientOriginalName() . strtotime("Now") . "." . $extension); // nome do path no banco
-
-            $RequestImage->move(public_path('/image/events'), $imageName);
+            $requestImage->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
+
         }
+
         $user = auth()->user();
         $event->user_id = $user->id;
 
         $event->save();
 
-        return redirect('/')->with('msg', 'Pedido de doação criado com sucesso !');
+        return redirect('/')->with('msg', 'Evento criado com sucesso!');
+
     }
-    //função para mostrar o evento para o dono (um domo tem varios eventos e um evento tem apenas um Owner(dono))
-    public function show($id)
-    {
-        $event = Event::findOrfail($id);
+
+    public function show($id) {
+
+        $event = Event::findOrFail($id);
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
 
-
-        return view('events.show', ['event' => $event]);
     }
-    //função para mostrar os eventos do usuario logado
-    public function dashboard()
-    {
+
+    public function dashboard() {
+
         $user = auth()->user();
+
         $events = $user->events;
 
         return view('events.dashboard', ['events' => $events]);
+
     }
-    //função deletar
-    public function destroy($id){
+
+    public function destroy($id) {
+
         Event::findOrFail($id)->delete();
-        return redirect('/dashboard')->with('msg','Evento excluido!');
+
+        return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
+
     }
-    //função para mostar a view de edição para o usuario
-    public function edit($id){
+
+    public function edit($id) {
+
         $event = Event::findOrFail($id);
-        return view('events.edit',['event'=> $event]);
+
+        return view('events.edit', ['event' => $event]);
+
     }
-    // Função para dar o update
-    public function update(Request $request){
+
+    public function update(Request $request) {
+
         $data = $request->all();
-        if ($request->hasfile('image') && $request->file('image')->isValid()) { //Se a requisição tiver arquivo de imagem e se for válida
 
-            $RequestImage = $request->image; #salvando a request->image em $RequestImage
+        // Image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
 
-            $extension =  $RequestImage->extension(); // salvando a extensão da imagem na variavel $extension
+            $requestImage = $request->image;
 
-            $imageName = md5($RequestImage->getClientOriginalName() . strtotime("Now") . "." . $extension); // nome do path no banco
+            $extension = $requestImage->extension();
 
-            $RequestImage->move(public_path('/image/events'), $imageName);
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
 
             $data['image'] = $imageName;
-        }
-        Event::FindOrFail($request->id)->update($data);
 
-        return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
+        }
+
+        Event::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
+
     }
+
+    public function joinEvent($id) {
+
+        $user = auth()->user();
+
+        $user->eventsAsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento ' . $event->title);
+
+    }
+
 }
-##teste

@@ -16,36 +16,32 @@
                     <ion-icon name="location-outline"></ion-icon>{{ $event->city }}
                 </p>
                 <p class="events-participants">
-                    <ion-icon name="people-outline"></ion-icon> X participants
+                    <ion-icon name="people-outline"></ion-icon> {{ count($event->users) }} Participantes
                 </p>
                 <p class="event-owner">
-                    <ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name']}}
+                    <ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}
                 </p>
-                <a href="#" class="btn btn-primary" id="event-submit">Confirmar doação</a>
+                <form action="/events/join/{{ $event->id }}" method="POST">
+                    @csrf
+                    <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault();
+                            this.closest('form').submit();">Confirmar Presença</a>
+                </form>
                 <h3> A doação conta com </h3>
-                <ul id="itens-list">
+
+                {{-- <ul id="itens-list">
                     @foreach ($event->itens as $item)
                         <li>
                             <ion-icon name="play-outline"></ion-icon><span>{{ $item }}</span>
                         </li>
                     @endforeach
-                </ul>
-
+                </ul> --}}
             </div>
             <div class="col-md-12" id="description-container">
                 <h3>Sobre o e evento</h3>
                 <p class="eventdescription">{{ $event->description }}
                 </p>
                 <p>
-                    @auth
-                    <td>
-                        <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
-                        <form action="/events/{{$event->id}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
-                    </td>
-                    @endauth
+
                 </p>
 
             </div>
