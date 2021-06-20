@@ -95,7 +95,20 @@ class EventController extends Controller
     }
     // Função para dar o update
     public function update(Request $request){
-        Event::FindOrFail($request->id)->update($request->all());
+        $data = $request->all();
+        if ($request->hasfile('image') && $request->file('image')->isValid()) { //Se a requisição tiver arquivo de imagem e se for válida
+
+            $RequestImage = $request->image; #salvando a request->image em $RequestImage
+
+            $extension =  $RequestImage->extension(); // salvando a extensão da imagem na variavel $extension
+
+            $imageName = md5($RequestImage->getClientOriginalName() . strtotime("Now") . "." . $extension); // nome do path no banco
+
+            $RequestImage->move(public_path('/image/events'), $imageName);
+
+            $data['image'] = $imageName;
+        }
+        Event::FindOrFail($request->id)->update($data);
 
         return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
     }
