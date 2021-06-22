@@ -5,13 +5,14 @@
 @section('content')
 
     <div id="event-create-container" class="col-md-6 offset-md-3">
-        <h1>Crie o seu evento</h1>
+        <h1>Transforme a vida de alguém por aqui</h1>
+        <p></p>
         <form action="/events" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="image">Suba sua imagem :</label>
                 <input type="file" class="form-control-file" id="image" name="image" required>
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label for="title">Evento:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento">
@@ -38,16 +39,17 @@
             <div class="form-group">
                 <label for="title">Adicione itens de infraestrutura:</label>
                 <div class="form-group">
-                    <input type="checkbox" name="itens[]" value="Cadeiras"> Cadeiras
+                    <input type="checkbox" name="itens[]" value="Macarrão"> Macarrao
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="itens[]" value="Palco"> Palco
+                    <input type="checkbox" name="itens[]" value="Arroz"> Arroz
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="itens[]" value="Cerveja gratis"> Cerveja gratis
+                    <input type="checkbox" name="itens[]" value="Oleo"> Oleo
+
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="itens[]" value="Open Food"> Open food
+                    <input type="checkbox" name="itens[]" value=""> Open food
                 </div>
                 <div class="form-group">
                     <input type="checkbox" name="itens[]" value="Brindes"> Brindes

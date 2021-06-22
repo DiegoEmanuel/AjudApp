@@ -16,7 +16,7 @@
                     <ion-icon name="location-outline"></ion-icon>{{ $event->city }}
                 </p>
                 <p class="events-participants">
-                    <ion-icon name="people-outline"></ion-icon> {{ count($event->users) }} Participantes
+                    <ion-icon name="people-outline"></ion-icon> {{ count($event->users) }} Doadores
                 </p>
                 <p class="event-owner">
                     <ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}
@@ -26,11 +26,11 @@
                         @csrf
                         <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault();
                         this.closest('form').submit();">
-                            Confirmar Presença
+                            Confirmar doação
                         </a>
                     </form>
                 @else
-                    <p class="alredy-joined-msg">Voce já está participando</p>
+                    <p class="alredy-joined-msg">Voce já está contribuindo</p>
                 @endif
                 <h3> A doação conta com </h3>
 
@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="col-md-12" id="description-container">
-                <h3>Sobre o e evento</h3>
+                <h3>Sobre o evento</h3>
                 <p class="eventdescription">{{ $event->description }}
                 </p>
                 <p>

@@ -50,7 +50,6 @@
     </div>
     <div class="col-md-10 offset-md-1 dashboard-title-container">
         <h1>Esses são seus eventos mano</h1>
-
     </div>
     </div>
     <div class="col-md-10 offset-md-1 dashboard-events-container">
@@ -64,7 +63,6 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @foreach ($eventsAsParticipant as $event)
                         <tr>
@@ -78,8 +76,6 @@
                                 <button type="submit" class="btn btn-danger delete-btn">
                                     <ion-icon name="trash-outline"></ion-icon>Sair
                                 </button>
-
-
                                 </form>
                             </td>
                         </tr>
