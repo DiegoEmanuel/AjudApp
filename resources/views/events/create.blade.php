@@ -48,6 +48,7 @@
                     <input type="checkbox" name="itens[]" value="Oleo"> Oleo
                 </div>
                 <div class="form-group">
+                
                     <input type="checkbox" name="itens[]" value=""> Open food
                 </div>
                 <div class="form-group">
